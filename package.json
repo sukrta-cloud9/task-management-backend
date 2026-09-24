@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "seed:admin": "node scripts/createAdmin.js"
   },
   "keywords": [],
   "author": "",

@@ -34,7 +34,25 @@ const User = {
     `);
 
     return statement.get(id);
-  }
+  },
+
+  findAll: () => {
+  const statement = db.prepare(`
+    SELECT id, name, email, role, created_at
+    FROM users
+  `);
+
+  return statement.all();
+},
+
+deleteById: (id) => {
+  const statement = db.prepare(`
+    DELETE FROM users
+    WHERE id = ?
+  `);
+
+  return statement.run(id);
+}
 };
 
 module.exports = User;
