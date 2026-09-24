@@ -1,4 +1,5 @@
 require("dotenv").config();
+const userRoutes = require("./routes/userRoutes");
 const express = require("express");
 const db = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
@@ -31,7 +32,7 @@ db.exec(`
 `);
 
 app.use("/auth", authRoutes);
-
+app.use("/users", userRoutes);
 app.get("/", (req, res) => {
   res.json({
     message: "Task Management API is running"
