@@ -5,8 +5,15 @@ const userRoutes = require("./routes/userRoutes");
 const express = require("express");
 const db = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
+const cors = require("cors");
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 
 app.use(express.json());
 
